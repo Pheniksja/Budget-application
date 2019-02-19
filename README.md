@@ -1,4 +1,4 @@
-A budget calculator to measure monthly expenses and incomes.
+A budget calculator to measure monthly expenses and income.
 
 I've created a simple application for calculating monthly expenses.
 I used Bootstrap 4.2.
