@@ -46,7 +46,7 @@ console.log(result);
         var newEl = $(`
                 <div class = "result-decription">
                     <p>  After your expenses you have <span> ${result} </span> left in your budget </p>
-                    <p> You spend more many than you have in your budget!  </p>
+                    <p> You spend more money than you have in your budget!  </p>
                 </div>
                 `);
                     $('.result').append(newEl);
