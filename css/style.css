@@ -53,7 +53,14 @@ h3 {
     font-weight: 600;
 }
 
-p {
-    font-size: 2em;
-    font-weight: 600;   
+.result p {
+    font-size: 1em;
 }
+
+.result-decription {
+    font-size: 20px;
+}
+
+.result-decription span {
+    font-weight:bold;
+} 

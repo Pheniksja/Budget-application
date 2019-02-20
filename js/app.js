@@ -4,61 +4,59 @@ const btn = document.querySelector('.btnResult');
 btn.addEventListener("click", function (event) {
     // event.preventDefault()
 
-// $(function() {
+$(function() {
     //łapię elementy i tworzę zmienne
-    const income = document.querySelector('#income');
-    const incomeValue = income.value
-    const rent = document.querySelector('#rent');
-    const rentValue = rent.value
-    // console.log(rent);
-    const car = document.querySelector('#car');
-    const carValue = car.value
-    const food = document.querySelector('#food');
-    const foodValue = food.value
-    const clothes = document.querySelector('#clothes');
-    const clothesValue = clothes.value
-    const health = document.querySelector('#health');
-    const healthValue = health.value
-    const animal = document.querySelector('#animal');
-    const animalValue = animal.value
-    const sport = document.querySelector('#sport');
-    const sportValue = sport.value
-    const entertainment = document.querySelector('#entertainment');
-    const entertainmentValue = entertainment.value
+    const incomeValue = document.querySelector('#income').value;
+    const rentValue = document.querySelector('#rent').value;
+    const carValue = document.querySelector('#car').value;
+    const foodValue = document.querySelector('#food').value;
+    const clothesValue = document.querySelector('#clothes').value;
+    const healthValue = document.querySelector('#health').value;
+    const animalValue = document.querySelector('#animal').value;
+    const sportValue = document.querySelector('#sport').value;
+    const entertainmentValue = document.querySelector('#entertainment').value;
     const finalResult = document.querySelector('#result');
-  
+    var result =  incomeValue - rentValue - carValue - foodValue - clothesValue - healthValue - animalValue - sportValue - entertainmentValue
+    $(".results-text").empty();
+console.log(result);
 
     // console.log(rentValue)
 
-
-    if ( rentValue === "") {
-        alert ('UWAGA: Wprowadzany znak musi być liczbą')
+    newEl= '';
+    if ( incomeValue === "")  {
+        alert ('Put income value')
+    } else if (result > 0) {
+        var newEl = $(`
+                <div class = "result-decription">
+                    <p>  After your expenses you have <span> ${result} </span> left in your budget  </p>
+                </div>
+                `);
+                    $('.result').append(newEl);
+                      newEl= '';
+    } else if (result === 0) {
+        var newEl = $(`
+                <div class = "result-decription">
+                    <p>  After your expenses you have <span> ${result}. </p>
+                    <p> You spend all money from your budget. </p>
+                </div>
+                `);
+                    $('.result').append(newEl);
+    
+    } else {
+        var newEl = $(`
+                <div class = "result-decription">
+                    <p>  After your expenses you have <span> ${result} </span> left in your budget </p>
+                    <p> You spend more many than you have in your budget!  </p>
+                </div>
+                `);
+                    $('.result').append(newEl);
     }
-    else {
-       var result =  incomeValue - rentValue - sportValue
-    }
-    finalResult.textContent = result;
-    // rentValue.value = '';
-    console.log(result)
-// })
-console.log(result);
+  
+    // finalResult.textContent = result;
+;
 })
-// finalResult.textContent = result;
-//     amountInput.value = '';
+document.querySelector ('.result-decription').innerHTML = '';
 
-//Tworze nowy element i wypelniam go danymi dotyczącymi kursu
-        //     var newEl = $(`
-        //         <div>
-        //             <p>  Średni kurs NBP z dnia  ${effectiveDate} wynosi: </p>
-        //             <p>  1 PLN = ${midEuro}  </p>
-        //         </div>
-        // `);
 
-        //     $('.result').append(newEl);
+})
 
-        //  wyliczam wartość waluty po kursie
-
-           
-//     })
-// });
-// });
